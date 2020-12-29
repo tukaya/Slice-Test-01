@@ -8,7 +8,7 @@
             var a = new A();
             a.Method1();
             a.Method1();
-            return _bar;
+            return _bar;  
         }
 
         private void SomeMethod(X x)

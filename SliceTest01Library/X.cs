@@ -5,7 +5,7 @@
         public void MethodX()
         {
             var y = new Y();
-            y.MethodY();
+            y.MethodY();   
         }
     }
 }

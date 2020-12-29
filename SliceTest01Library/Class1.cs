@@ -10,6 +10,12 @@
         public void SomeMethod()
         {
             var x = new Foo().Bar();
+            var b = new B();
+            var bar = b.Bar();
+            if (x == bar)
+            { 
+            
+            }
         }
     }
 }
