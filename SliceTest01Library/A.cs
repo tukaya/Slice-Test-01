@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace SliceTest01Library
 {
     class A
@@ -17,7 +12,8 @@ namespace SliceTest01Library
 		private void Method2()
 		{
 			// ...
-			
+			var b = new B();
+			var bar = b.Bar();
 		}
     }
 }
