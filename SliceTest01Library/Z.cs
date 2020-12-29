@@ -10,6 +10,7 @@ namespace SliceTest01Library
     {
         public void ZMethod()
         {
+
             var y = new Y();
             y.MethodY();
         }
