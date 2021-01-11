@@ -4,6 +4,9 @@ pool:
   name: Azure Pipelines
   vmImage: 'windows-latest'
 
+variables:
+- group: GitHubApiAccess
+
 trigger:
   batch: true
   branches:
@@ -39,4 +42,4 @@ stages:
       displayName: 'Run Slice Scanner TEST' 
       env:
         SYSTEM_ACCESSTOKEN: $(System.AccessToken)
-        SOURCECONTROL_ACCESSTOKEN: "fb78959d7770d2c9d9d9326bebb8892f8b76ad25"
+        SOURCECONTROL_ACCESSTOKEN: "$(GitHub.Tukaya.PersonalAccessToken)"
