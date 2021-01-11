@@ -1,19 +1,24 @@
 ﻿
 namespace SliceTest01Library
 {
-    class A
+    interface IA
     {
-		public void Method1()
-		{
-			
-			Method2();
-		}
-		
-		private void Method2()
-		{
-			// ...
-			var b = new B();
-			var bar = b.Bar();
-		}
+        void Method1();
+    }
+
+    class A : IA
+    {
+        public void Method1()
+        {
+
+            Method2();
+        }
+
+        private void Method2()
+        {
+            // ...
+            var b = new B();
+            var bar = b.Bar();
+        }
     }
 }
