@@ -10,7 +10,7 @@ namespace SliceTest01Library
     {
         public void MethodY()
         {
-            var z = new Z();
+            var z = new Z(new X());
 
         }
     }
