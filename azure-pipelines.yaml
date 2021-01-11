@@ -39,4 +39,4 @@ stages:
       displayName: 'Run Slice Scanner TEST' 
       env:
         SYSTEM_ACCESSTOKEN: $(System.AccessToken)
-        SOURCECONTROL_ACCESSTOKEN: "b06b761e216888fd3466ae8cb241378dc9227f1e"
+        SOURCECONTROL_ACCESSTOKEN: "be5b2965726121ccee9b748a8661442f887a22a8"
