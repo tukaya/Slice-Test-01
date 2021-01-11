@@ -1,11 +1,16 @@
 ﻿namespace SliceTest01Library
 {
-    class X
+    interface IX
+    {
+        void MethodX();
+    }
+
+    class X : IX
     {
         public void MethodX()
         {
             var y = new Y();
-            y.MethodY();   
+            y.MethodY();
         }
     }
 }

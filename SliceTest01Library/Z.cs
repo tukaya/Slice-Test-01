@@ -8,11 +8,20 @@ namespace SliceTest01Library
 {
     class Z
     {
+        private readonly IX x;
+
+        public Z(IX x)
+        {
+            this.x = x;
+        }
+
         public void ZMethod()
         {
 
             var y = new Y();
             y.MethodY();
+
+            x.MethodX();
         }
 
     }
