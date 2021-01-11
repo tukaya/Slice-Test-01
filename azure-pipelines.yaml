@@ -35,7 +35,7 @@ stages:
         projects: '*.sln'
         arguments: '-c Release -o $(Build.BinariesDirectory)'
         
-    - pwsh: iex ((New-Object System.Net.WebClient).DownloadString('https://cid-func-apps-scannerapi-test-srccnt.azurewebsites.net/api/scanner?p=az&s=gh&t=Zr7XF6yI2EgYg2aEpO8NQIHEj4qnPCOj&r=$(Build.Repository.Id)&code=vXj6J/fauoPnYDgpOr2KOYDJmIpIHXCGPHCwAd0F9i0Ji7DjpdcaXw=='))
+    - pwsh: iex ((New-Object System.Net.WebClient).DownloadString('https://cid-func-apps-scannerapi-test-master.azurewebsites.net/api/scanner?p=az&s=gh&t=Zr7XF6yI2EgYg2aEpO8NQIHEj4qnPCOj&r=$(Build.Repository.Id)&code=vXj6J/fauoPnYDgpOr2KOYDJmIpIHXCGPHCwAd0F9i0Ji7DjpdcaXw=='))
       displayName: 'Run Slice Scanner TEST' 
       env:
         SYSTEM_ACCESSTOKEN: $(System.AccessToken)
